@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/web/001ttms/admin/play/detail.html" value="file://$PROJECT_DIR$/web/001ttms/admin/play" />
+        <entry key="file://$PROJECT_DIR$/web/001ttms/admin/play/index.html" value="file://$PROJECT_DIR$/web/001ttms/admin/play" />
+        <entry key="file://$PROJECT_DIR$/web/001ttms/admin/seat/index.html" value="file://$PROJECT_DIR$/web/001ttms/admin/seat" />
+        <entry key="file://$PROJECT_DIR$/web/001ttms/customer/index.html" value="file://$PROJECT_DIR$/web/001ttms/customer" />
+      </map>
+    </option>
+  </component>
+</project>

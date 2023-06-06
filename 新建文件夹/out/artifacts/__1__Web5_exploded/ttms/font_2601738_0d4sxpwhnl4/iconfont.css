@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "iconfonttest"; /* Project id 2601738 */
+  src: url('iconfont.woff2?t=1623381233440') format('woff2'),
+       url('iconfont.woff?t=1623381233440') format('woff'),
+       url('iconfont.ttf?t=1623381233440') format('truetype');
+}
+
+.iconfonttest {
+  font-family: "iconfonttest" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-testconfirmIcon:before {
+  content: "\e60b";
+}
+
+.icon-testtianjia:before {
+  content: "\e64c";
+}
+
+.icon-testicon_add:before {
+  content: "\e6e6";
+}
+
+.icon-testtianjia1:before {
+  content: "\e648";
+}
+
+.icon-testqian:before {
+  content: "\e618";
+}
+
+.icon-testC_huaban1:before {
+  content: "\e628";
+}
+
+.icon-testC-05:before {
+  content: "\e629";
+}
+
+.icon-testC-04:before {
+  content: "\e62a";
+}
+
+.icon-testC-02:before {
+  content: "\e62b";
+}
+
+.icon-testC-09:before {
+  content: "\e62c";
+}
+
+.icon-testC-08:before {
+  content: "\e62d";
+}
+
+.icon-testC-13:before {
+  content: "\e62e";
+}
+
+.icon-testC-16:before {
+  content: "\e62f";
+}
+
+.icon-testC-10:before {
+  content: "\e630";
+}
+
+.icon-testC-03:before {
+  content: "\e631";
+}
+
+.icon-testC-11:before {
+  content: "\e632";
+}
+
+.icon-testC-07:before {
+  content: "\e633";
+}
+
+.icon-testC-21:before {
+  content: "\e634";
+}
+
+.icon-testC-15:before {
+  content: "\e635";
+}
+
+.icon-testC-22:before {
+  content: "\e636";
+}
+
+.icon-testC-12:before {
+  content: "\e637";
+}
+
+.icon-testC-14:before {
+  content: "\e638";
+}
+
+.icon-testC-25:before {
+  content: "\e639";
+}
+
+.icon-testC-26:before {
+  content: "\e63a";
+}
+
+.icon-testC-24:before {
+  content: "\e63b";
+}
+
+.icon-testC-23:before {
+  content: "\e63c";
+}
+
+.icon-testC-17:before {
+  content: "\e63d";
+}
+
+.icon-testC-18:before {
+  content: "\e63e";
+}
+
+.icon-testC-27:before {
+  content: "\e63f";
+}
+
+.icon-test028-filmreel:before {
+  content: "\e716";
+}
+
+.icon-test047-calendar:before {
+  content: "\e71a";
+}
+
+.icon-testdianhua:before {
+  content: "\e8ae";
+}
+
+.icon-testguanliyuan:before {
+  content: "\e600";
+}
+
+.icon-testguanli:before {
+  content: "\e640";
+}
+
+.icon-testhuabankaobei:before {
+  content: "\e677";
+}
+
+.icon-testfabudehuodong-shoupiaozhong:before {
+  content: "\e612";
+}
+
+.icon-testdianying:before {
+  content: "\e658";
+}
+

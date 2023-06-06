@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录入口</title>
+<style>
+html.body{
+	margin:0;
+	font-family:"微软雅黑";
+}
+.container{
+	width:100vw;
+	height:100vh;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background:url("../images/beijing4.jpg") fixed no-repeat;
+	background-size:cover;
+}
+.notes{
+	width:300px;
+	height:300px;
+	display:fiex;
+	background-color:rgba(0,0,0,0.40);
+	color:rgba(255,255,255,0.80);
+	font-size:18px;
+	padding:20px;
+}
+.notes h2{
+	font-size:28px;
+	font-weight:400;
+	color:rgba(255,255,255,1.00);
+	padding-left:10px;
+}
+.login-form{
+	width:300px;
+	height:258px;
+	display:flex;
+	flex-direction:column;
+	padding:40px;
+	text-align:center;
+	position:relative;
+	z-index: 100;
+	background:inheit;
+/*	border-radius:18px;*/
+	overflow:hidden;
+}
+.login-form::before{
+	content:"";
+	width:calc(100% + 20px);
+	height:calc(100% + 20px);
+	background:inherit;
+	box-shadow:inset 0 0 0 200px rgba(255,255,255,0.8);
+	position:absolute;
+	top:-10px;
+	left:-10px;
+	z-index:-1;
+	filter:blur(6px);
+	overflow:hidden;
+}
+.login-form h2{
+	font-size:18px;
+	font-weight:400px;
+	color:#3D5245;
+}
+.login-form .user{
+	color:rgba(210,118,35,1.00);
+}
+.login-form input,
+.login-form .button{
+	margin:6px 0;
+	height:36px;
+	border:none;
+	background-color:rgba(255,255,255,0.3);
+	border-radius:4px;
+	padding:0 14px;
+	color:#3d5245;
+}
+/*
+.login-form input:focus{
+	border-style:solid;
+	border-color:rgba(0,0,0,0.40);
+}
+*/
+.login-form input::placeholder{
+	color:#3d5245;
+}
+.login-form .button{
+	margin-top:24px;
+	background-color:rgba(27,88,69,0.4);
+	color:white;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+	transition: 0.4s;
+
+}
+.login-form .button:hover{
+	background-color:rgba(12,80,38,0.67);
+}
+.login-form .button::before,
+.login-form .button::after{
+	content:"";
+	display:block;
+	width:80px;
+	height:100px;
+	background:rgba(179,255,210,0.5);
+	opacity:0.5;
+	position:absolute;
+	left:0;
+	top:0;
+	transform:skewX(-15deg);
+	filter:blur(30px);
+	overflow:hidden;
+	transform:translateX(-100px);
+}
+.login-form .button::after{
+	width:40px;
+	background:rgba(179,255,210,0.3);
+	left:60px;
+	filter:blur(5px);
+	opacity:0;
+}
+.login-form .button:hover::before{
+	transition:1s;
+	transform:translateX(320px);
+	opacity:0.7;
+}
+.login-form .button:hover::after{
+	transition:1s;
+	transform:translateX(320px);
+	opacity:1;
+}
+.login-form a{
+	text-decoration: none;
+	color:#3d5245;
+}
+.fgt-rs{
+    text-align: right;	
+}
+.fgt-rs a{
+	text-decoration: none;
+	color:#3d5245;
+}
+.fgt-rs a:hover{
+	color:rgba(255,255,255,1.00);
+}
+
+</style>
+   <script>
+  
+	
+	function login(){
+      var url = "../userServlet";
+      if (window.XMLHttpRequest)
+          req = new XMLHttpRequest();
+      else if (window.ActiveXObject)
+          req = new ActiveXObject("Microsoft.XMLHTTP");
+      if (req) {
+      //采用POST方式，异步传输
+      req.open("post", url, true);
+      //POST方式，必须加入如下头信息设定
+      req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      req.onreadystatechange = checkComplete;
+      req.send("type=login&username="+document.getElementById("username").value);
+      //alert(req.readyState);
+      
+    }
+  }
+	  
+		function checkComplete() {
+	
+		    if (req.readyState == 4 && req.status == 200)
+		    {
+		      var json =  JSON.parse(req.responseText);  
+		      if(json.length<=0) 
+		    	  alert("抱歉用户不存在！");
+		      else
+		      {
+		    	  var username=json[0].username;
+		          var pwd=json[0].password;
+		          var password=document.getElementById("password").value;
+		          var status=json[0].status;
+		          var userquestion=json[0].userquestion;
+		          var useranswer=json[0].useranswer;
+		          var usertel=json[0].usertel;
+		          if(password==pwd){	
+		         	  if(status=="正常")
+		        	  {
+		        		  alert("登陆成功");
+		        		  alert(userquestion);
+		        		  window.location ="index.html?&username="+encodeURIComponent(username)
+		        				  +"&pwd="+encodeURIComponent(pwd)
+		        				  +"&status="+encodeURIComponent(status)
+		        				  +"&userquestion="+encodeURIComponent(userquestion)
+		        				  +"&useranswer="+encodeURIComponent(useranswer)
+		        				  +"&usertel="+encodeURIComponent(usertel);
+		        	   }
+		        	  else if(status=="禁用")
+		        	  {
+		        		  alert("您的账户被禁用，如有疑问请联系管理员");
+		        	  }
+		          }
+		          else{
+		        	  alert("用户密码错误！");
+		          }
+		        }
+		      }
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="notes">
+<!--			<br/>-->
+			<br/>
+			<h2>RhineLab影厅</h2>
+			<p></p>
+			<p>Per aspera ad astra</p>
+			<p></p>
+		</div>
+		<div class="login">
+		<form action="#" class="login-form">
+			<h2><a href="login.html" class="user">用户登录</a>     <a href="elogin.html" class="employee">员工登录</a></h2>
+			<input type= "text" id="username" name="username" placeholder="用户名">
+			<input type="password" id="password" name="password" placeholder="密码">
+			<!--<button type="submit">登录</button>-->
+			<input type="button" class="button"  value="登录" onclick="login()" >
+			<br/>
+			<div class="fgt-rs">
+			<a href="forgetpwd.html"> 忘记密码?</a>&nbsp;&nbsp;<a href="resign.html">立即注册</a>
+			</div>
+		</form>
+		</div>
+	</div>
+	</body>
+</html>
