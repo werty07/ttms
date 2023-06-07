@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ttms_002:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ttms_002_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ttms_002/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ttms_002" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../HUAWEI/TTMSFramework/src/main/webapp/WEB-INF/lib/org.json-2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../mysql29jar(1)/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
